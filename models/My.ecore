@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="taskmanager" nsURI="cs.gssi.it/taskmanager" nsPrefix="taskmanager">
+  <eClassifiers xsi:type="ecore:EClass" name="TasksModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projects" upperBound="-1"
+        eType="#//Project" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Project">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//TasksModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
+        eType="#//Task" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Label"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PersonalProj" eSuperTypes="#//Project"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TeamProj" eSuperTypes="#//Project"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Simple" eSuperTypes="#//Task"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Composite" eSuperTypes="#//Task">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subtasks" upperBound="-1"
+        eType="#//Simple" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

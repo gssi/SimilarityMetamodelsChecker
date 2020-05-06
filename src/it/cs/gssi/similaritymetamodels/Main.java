@@ -35,9 +35,9 @@ public class Main {
 		try {
 			
 		//File dir = new File("dataset");
-		FileWriter writer = new FileWriter("models/similarity-matrix.csv");	
+		FileWriter writer = new FileWriter("repair/similarity-matrix.csv");	
 		
-		String datasetfolder="models/";
+		String datasetfolder="repair/";
 		//write the CSV matrix 
 		buildCSV(datasetfolder, writer);
 		

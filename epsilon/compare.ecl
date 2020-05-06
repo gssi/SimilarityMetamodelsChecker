@@ -42,7 +42,7 @@ rule EReference
   with v : Target!EReference {
   
   compare {
-  	if(s.name.fuzzyMatch(v.name) and s.etype.name.fuzzyMatch(v.etype.name) and s.eContainingClass.name.fuzzyMatch(v.eContainingClass.name) and s.lowerBound==v.lowerBound and s.upperBound==v.upperBound){
+  	if(s.name.fuzzyMatch(v.name) and s.etype.name.fuzzyMatch(v.etype.name) and s.eContainingClass.name.fuzzyMatch(v.eContainingClass.name) and s.lowerBound==v.lowerBound and s.upperBound==v.upperBound and s.unique==v.unique and s.containment==v.containment){
     	//("Feature "+s.name+" matching").println();
     	
     	return true;

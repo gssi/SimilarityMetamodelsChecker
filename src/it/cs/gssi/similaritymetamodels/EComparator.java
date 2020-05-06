@@ -120,14 +120,17 @@ public class EComparator extends EpsilonStandaloneExample {
 			
 			for (EClass eClass : classes) {
 				if(successfull.getMatch(eClass)==null) {
+					//deleted
 					
+					classsim--;
 					//System.err.println("not matching :"+eClass.getName());
 					
 				}else {
 					classsim++;
 					for (EStructuralFeature f : eClass.getEStructuralFeatures()) {
 						if(successfull.getMatch(f)==null) {
-							
+							//deleted
+							featuresim--;
 							//System.err.println("not matching :"+f.getName()+ " in class "+f.getEContainingClass().getName());
 							
 						}else {
